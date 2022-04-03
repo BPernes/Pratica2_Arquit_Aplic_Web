@@ -29,7 +29,6 @@ app.get('/movies/new', (req, res) => {
 })
 
 app.post('/movies', async (req, res) => {
-    console.log(req.body)
     const newMovie = new Movie(req.body)
     await newMovie.save();
 
