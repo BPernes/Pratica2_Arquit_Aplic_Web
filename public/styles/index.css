@@ -1,0 +1,26 @@
+body {
+    background-color: #090A12;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+    color: white;
+}
+
+.card {
+    margin: 0px;
+}
+
+.container {
+    background-color: #090A12;
+    border-radius: 0.5%;
+    border-width: 10px;
+    border-color: #EEE5E5;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+}

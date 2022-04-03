@@ -5,18 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/styles/details.css">
     <title> <%= foundMovie.title %>  </title>
 </head>
 
 <body>
-    <h1> <%= foundMovie.title %>  </h1>
-    <ul>
-        <li> Synopsis: <%= foundMovie.synopsis %></li>
-    </ul>
 
-    <form action="/movies/<%=foundMovie._id%>?_method=DELETE" method="POST"> 
-        <button type="submit" class="btn btn-danger">Delete</button>
-    </form>
+    <main>
+        <div class="card text-white bg-dark" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-6">
+                <img src=" <%= foundMovie.image %> " class="img-fluid rounded-start" alt="Movie image">
+              </div>
+              <div class="col-md-5">
+                <div class="card-body">
+                  <h5 class="card-title"> <%= foundMovie.title %> </h5>
+                  <p class="card-text"> <%= foundMovie.synopsis %> </p>
+                  <p class="card-text"> <%= foundMovie.releaseDate %> </p>
+                  <p class="card-text"><small class="text-muted"><%= foundMovie.duration %></small></p>
+                  <p class="card-text"><small class="text-muted"><%= foundMovie.categories %></small></p>
+                </div>
+              </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="buttonsContainer">
+        <form action="/movies/<%=foundMovie._id%>?_method=DELETE" method="POST"> 
+            <button type="submit" class="btn btn-outline-danger">Delete Movie</button>
+        </form>
+    
+        <a href="/movies/<%= foundMovie._id %>/edit" class="btn btn-outline-primary"> Edit Movie</a>
+
+        <a href="/movies" class="btn btn-outline-light"> All movies</a>
+    </div>
 
     <script language="javascript" src="/js/bootstrap.min.js"></script>
 </body>

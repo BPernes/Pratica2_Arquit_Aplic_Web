@@ -5,16 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/styles/index.css">
     <title>Movies</title>
 </head>
 <body>
-    <h1> All the movies will go here!!</h1>
-    
-    <ul>
-        <% for (let movie of movies) { %> 
-            <li> <%= movie.title %> </li> 
-        <% } %> 
-    </ul>
+    <h1> Movies in Cards</h1>
+    <div class="buttonContainer">
+        <a href="/movies/new" class="btn btn-outline-light"> Add a movie</a>
+    </div>
+
+    <main>
+        <div class="container">
+            <div id="card-container" class="row row-cols-auto justify-content-center pt-5"> 
+                <% for (let movie of movies) { %>
+                    
+                    <div class="col">
+                        <div class="card h-100 text-white bg-dark" style="width: 18rem;">
+                            <img src="<%= movie.image %> " class="card-img-top" alt="Movie image">
+                            <div class="card-body">
+                              <h5 class="card-title"> <%= movie.title %> </h5>
+                              <p class="card-text"> <%= movie.synopsis %> </p>
+                              <a href="/movies/<%= movie._id %>" class="btn btn-outline-light">Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                <% } %> 
+            </div>
+        </div>
+
+    </main>
     
     <script language="javascript" src="/js/bootstrap.min.js"></script>
 </body>
